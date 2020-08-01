@@ -7,6 +7,7 @@ generateBtn.addEventListener("click", generatePassword);
 
 
 function generatePassword() {
+  // these are my variables
   var characterChoice =[]
 
   var minimumNumbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
@@ -17,6 +18,7 @@ function generatePassword() {
 
   var minimumSymbols = ['!', '@', '#', '$', '%', '^', '&', '*', '?'];
 
+  // these are my prompts and confirms
   var passwordLength = prompt("Enter amount of characters, must be more than 8 characters and less than 128 characters.");
   if (passwordLength < 8 || passwordLength > 128) {
     alert("password must be 8 characters long and less than 128 characters!")
@@ -44,5 +46,11 @@ function generatePassword() {
       characterChoice.push(3)
     }
     console.log(characterChoice)
+
+    // for loop and math floor/random
+    for (var i = 0; i < passwordLength; i++) {
+      var arrayPick = Math.floor(Math.random() * characterChoice.length);
+      console.log(arrayPick)
+    }
   }
 }
