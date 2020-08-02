@@ -10,6 +10,8 @@ function generatePassword() {
   // these are my variables
   var characterChoice =[]
 
+  var finalPassword =[]
+
   var minimumNumbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
 
   var minimumLowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -51,6 +53,16 @@ function generatePassword() {
     for (var i = 0; i < passwordLength; i++) {
       var arrayPick = Math.floor(Math.random() * characterChoice.length);
       console.log(arrayPick)
+      if (arrayPick === 0 && characterChoice[0] === 0) {
+        finalPassword.push(minimumNumbers[Math.floor(Math.random() * 10)])
+      } else if (arrayPick === 1 && characterChoice[1] === 1) {
+        finalPassword.push(minimumLowerCase[Math.floor(Math.random() * 26)])
+      }else if (arrayPick === 2 && characterChoice[2] === 2) {
+        finalPassword.push(minimumUpperCase[Math.floor(Math.random() * 26)])
+      }else if (arrayPick === 3 && characterChoice[3] === 3) {
+        finalPassword.push(minimumSymbols[Math.floor(Math.random() * 9)])
+      }
     }
   }
+
 }
