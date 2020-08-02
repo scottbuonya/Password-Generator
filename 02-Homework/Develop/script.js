@@ -61,8 +61,16 @@ function generatePassword() {
         finalPassword.push(minimumUpperCase[Math.floor(Math.random() * 26)])
       }else if (arrayPick === 3 && characterChoice[3] === 3) {
         finalPassword.push(minimumSymbols[Math.floor(Math.random() * 9)])
+      } else {
+        passwordLength ++
       }
-    }
+    
+    } 
   }
+
+  var passwordText = document.querySelector("#password")
+  console.log(finalPassword)
+  var test = finalPassword.toString()
+
 
 }
